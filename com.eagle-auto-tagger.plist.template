@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.eagle-auto-tagger</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- Replace with your python path (e.g. `which python3`) -->
+        <string>__PYTHON_BIN__</string>
+        <!-- Replace with the cloned repo path -->
+        <string>__PROJECT_DIR__/watcher.py</string>
+    </array>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- Optional: override the Eagle library path if it's not the default -->
+        <key>EAGLE_LIBRARY</key>
+        <string>__EAGLE_LIBRARY_PATH__</string>
+        <!-- Optional: comma-separated Eagle folder IDs whose items should
+             receive a generative-AI prompt in the annotation field instead
+             of tags. Two categories, each with its own analysis prompt:
+               PHOTO        — photographic / editorial / product / lookbook
+               ILLUSTRATION — artwork / anime / concept / comics / paintings
+             Leave both empty to disable prompt mode. -->
+        <key>EAGLE_PROMPT_FOLDERS_PHOTO</key>
+        <string>__EAGLE_PROMPT_FOLDERS_PHOTO__</string>
+        <key>EAGLE_PROMPT_FOLDERS_ILLUSTRATION</key>
+        <string>__EAGLE_PROMPT_FOLDERS_ILLUSTRATION__</string>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>__PROJECT_DIR__</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+
+    <key>ThrottleInterval</key>
+    <integer>30</integer>
+
+    <key>StandardOutPath</key>
+    <string>__PROJECT_DIR__/watcher.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>__PROJECT_DIR__/watcher.err.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+</dict>
+</plist>

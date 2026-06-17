@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Runtime logs and state (machine-specific)
+*.log
+.tag_progress.jsonl
+.tag_failed.jsonl
+.prompt_progress.jsonl
+.prompt_failed.jsonl
+.tag_migration_progress.jsonl
+.tag_migration_failed.jsonl
+
+# Tag-vocabulary artifacts (machine-specific; rebuildable from the library)
+.tag_canonical_map.json
+.tag_canonical_map_review.md
+.tag_dictionary_cache.json
+.tag_backup_*.jsonl
+.tag_groups_backup_*.json
+
+# Local secrets / machine config (use .env.example as the template)
+.env
+
+# Local plist (machine-specific paths — use the .template instead)
+com.eagle-auto-tagger.plist
+com.*.eagle-auto-tagger.plist
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Tag-group artifacts (machine-specific, rebuildable)
+.tag_group_classification.json
+.tag_group_classification_review.md
